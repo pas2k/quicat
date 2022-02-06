@@ -1,0 +1,3 @@
+go run . -retry-delay 200 -ca certs/ca-cert.crt -keypair certs/client-keypair.pem quic-active-listen://localhost:7777 tcp-tunnel://localhost:22
+go run . -retry-delay 200 -clientca certs/ca-cert.crt -keypair certs/server-keypair.pem quic-passive-listen://0.0.0.0:7722 quic-passive-tunnel://0.0.0.0:7777
+go run . -retry-delay 200 -ca certs/ca-cert.crt -keypair certs/client-keypair.pem tcp-listen://0.0.0.0:7723 quic-active-tunnel://localhost:7722
